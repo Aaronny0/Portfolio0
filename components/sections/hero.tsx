@@ -1,5 +1,6 @@
-import { ArrowDownRight, ArrowRight, MapPin } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Download, MapPin } from "lucide-react";
 
+import { siteConfig } from "@/config/site";
 import { projects } from "@/data/fr/projects";
 
 const proof = [
@@ -43,6 +44,11 @@ export function Hero() {
               <a className="button button-secondary" href="#contact">
                 Me contacter <ArrowRight className="size-4" aria-hidden="true" />
               </a>
+              {siteConfig.cvAvailable ? (
+                <a className="button button-secondary" href={siteConfig.cvPath} download>
+                  Télécharger mon CV <Download className="size-4" aria-hidden="true" />
+                </a>
+              ) : null}
             </div>
           </div>
 

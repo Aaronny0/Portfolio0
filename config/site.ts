@@ -8,5 +8,5 @@ export const siteConfig = {
   linkedinHref: "https://linkedin.com/in/aaron-catraye",
   location: "Cotonou, Bénin",
   cvPath: "/cv/CV_Aaron_Catraye_Developpeur_Full_Stack.pdf",
-  cvAvailable: false,
+  cvAvailable: true,
 } as const;
