@@ -1,14 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { publicEnv } from "@/lib/env/public";
-
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/admin", "/client"],
-    },
-    sitemap: new URL("/sitemap.xml", publicEnv.appUrl).toString(),
-  };
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  return { rules: { userAgent: "*", allow: "/" }, sitemap: `${baseUrl}/sitemap.xml` };
 }

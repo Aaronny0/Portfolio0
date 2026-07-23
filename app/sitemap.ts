@@ -1,13 +1,5 @@
 import type { MetadataRoute } from "next";
 
-import { publicEnv } from "@/lib/env/public";
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: new URL("/", publicEnv.appUrl).toString(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-  ];
+  return [{ url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000", lastModified: new Date(), changeFrequency: "monthly", priority: 1 }];
 }

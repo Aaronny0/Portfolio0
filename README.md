@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio professionnel — Aaron CATRAYE
 
-## Getting Started
+Portfolio public d’Aaron CATRAYE, développeur Full-Stack et étudiant en Cybersécurité et Systèmes d’Information à Cotonou.
 
-First, run the development server:
+## Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Next.js 16 App Router, React 19, TypeScript, Tailwind CSS 4, Framer Motion, Lucide React et Zod.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation et lancement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    pnpm install
+    pnpm dev
 
-## Learn More
+Le site est ensuite accessible sur http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Vérifications
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    pnpm lint
+    pnpm typecheck
+    pnpm build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Configuration
 
-## Deploy on Vercel
+Copier .env.example vers .env.local. NEXT_PUBLIC_SITE_URL doit contenir l’URL finale. Pour activer le formulaire, configurer une clé Resend, une adresse d’expédition vérifiée et l’adresse destinataire.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contenus
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Projets : data/fr/projects.ts
+- Compétences : data/fr/skills.ts
+- Certifications : data/fr/certifications.ts
+- Expériences : data/fr/experiences.ts
+- Coordonnées et CV : config/site.ts
+- Captures : public/projects/
+- CV : public/cv/CV_Aaron_Catraye_Developpeur_Full_Stack.pdf
+- Certificats : public/certificates/
+
+Les données françaises sont isolées dans data/fr pour faciliter l’ajout futur de data/en et de routes /fr et /en sans publier une traduction incomplète.
+
+## Déploiement Vercel
+
+Importer le dépôt dans Vercel, renseigner les variables d’environnement, puis lancer le déploiement. Vercel détecte automatiquement pnpm et la commande de construction est pnpm build.
